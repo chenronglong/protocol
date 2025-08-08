@@ -418,6 +418,25 @@ message BatchGetIncrementalGroupMemberResp {
   map<string, getIncrementalGroupMemberResp> respList = 1;
 }
 
+
+message userInfo {
+  string userID = 1;
+  string nickname = 2;
+  string faceURL = 3;
+}
+
+// 群聊获取消息未读用户列表
+message GetGroupMsgReadStateReq {
+  string groupID = 1;
+  string msgID = 2;
+}
+
+message GetGroupMsgReadStateResp {
+  repeated userInfo users = 1;
+  uint64 readCount = 2;
+  uint64 unreadCount = 3;
+}
+
 service group {
   // Create group
   rpc createGroup(CreateGroupReq) returns (CreateGroupResp);
@@ -494,4 +513,7 @@ service group {
   rpc GetFullGroupMemberUserIDs(GetFullGroupMemberUserIDsReq) returns (GetFullGroupMemberUserIDsResp);
 
   rpc GetFullJoinGroupIDs(GetFullJoinGroupIDsReq) returns (GetFullJoinGroupIDsResp);
+
+  rpc GetGroupMsgReadState(GetGroupMsgReadStateReq) returns (GetGroupMsgReadStateResp);
+
 }
