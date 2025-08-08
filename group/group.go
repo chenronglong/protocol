@@ -442,3 +442,13 @@ func (x *GetUserReqApplicationListResp) Format() any {
 	}
 	return x
 }
+
+func (x *GetGroupMsgReadStateReq) Check() error {
+	if x.GroupID == "" {
+		return errors.New("GroupID is empty")
+	}
+	if x.MsgID == "" {
+		return errors.New("MsgID is empty")
+	}
+	return nil
+}
