@@ -4502,6 +4502,7 @@ type GetGroupMsgReadStateReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	GroupID       string                 `protobuf:"bytes,1,opt,name=groupID,proto3" json:"groupID"`
 	MsgID         string                 `protobuf:"bytes,2,opt,name=msgID,proto3" json:"msgID"`
+	Type          string                 `protobuf:"bytes,3,opt,name=type,proto3" json:"type"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4546,6 +4547,13 @@ func (x *GetGroupMsgReadStateReq) GetGroupID() string {
 func (x *GetGroupMsgReadStateReq) GetMsgID() string {
 	if x != nil {
 		return x.MsgID
+	}
+	return ""
+}
+
+func (x *GetGroupMsgReadStateReq) GetType() string {
+	if x != nil {
+		return x.Type
 	}
 	return ""
 }
@@ -4915,10 +4923,11 @@ const file_group_group_proto_rawDesc = "" +
 	"\buserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
-	"\afaceURL\x18\x03 \x01(\tR\afaceURL\"I\n" +
+	"\afaceURL\x18\x03 \x01(\tR\afaceURL\"]\n" +
 	"\x17GetGroupMsgReadStateReq\x12\x18\n" +
 	"\agroupID\x18\x01 \x01(\tR\agroupID\x12\x14\n" +
-	"\x05msgID\x18\x02 \x01(\tR\x05msgID\"\x88\x01\n" +
+	"\x05msgID\x18\x02 \x01(\tR\x05msgID\x12\x12\n" +
+	"\x04type\x18\x03 \x01(\tR\x04type\"\x88\x01\n" +
 	"\x18GetGroupMsgReadStateResp\x12,\n" +
 	"\x05users\x18\x01 \x03(\v2\x16.openim.group.userInfoR\x05users\x12\x1c\n" +
 	"\treadCount\x18\x02 \x01(\x04R\treadCount\x12 \n" +

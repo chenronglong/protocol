@@ -429,6 +429,7 @@ message userInfo {
 message GetGroupMsgReadStateReq {
   string groupID = 1;
   string msgID = 2;
+  string type = 3;
 }
 
 message GetGroupMsgReadStateResp {

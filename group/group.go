@@ -450,5 +450,11 @@ func (x *GetGroupMsgReadStateReq) Check() error {
 	if x.MsgID == "" {
 		return errors.New("MsgID is empty")
 	}
+	if x.Type == "" {
+		return errors.New("type is empty")
+	}
+	if x.Type != "read" && x.Type != "unread" {
+		return errors.New("type is invalid")
+	}
 	return nil
 }
