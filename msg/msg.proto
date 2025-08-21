@@ -405,6 +405,7 @@ message GetLastMessageResp {
 message SendPushMsgReq{
   string title=1;
   string desc=2;
+  repeated string userIDs=3;
 }
 
 message SendPushMsgResp{

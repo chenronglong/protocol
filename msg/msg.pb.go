@@ -4253,6 +4253,7 @@ type SendPushMsgReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title"`
 	Desc          string                 `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc"`
+	UserIDs       []string               `protobuf:"bytes,3,rep,name=userIDs,proto3" json:"userIDs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4299,6 +4300,13 @@ func (x *SendPushMsgReq) GetDesc() string {
 		return x.Desc
 	}
 	return ""
+}
+
+func (x *SendPushMsgReq) GetUserIDs() []string {
+	if x != nil {
+		return x.UserIDs
+	}
+	return nil
 }
 
 type SendPushMsgResp struct {
@@ -4658,10 +4666,11 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x04msgs\x18\x01 \x03(\v2(.openim.msg.GetLastMessageResp.MsgsEntryR\x04msgs\x1aN\n" +
 	"\tMsgsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
-	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\":\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"T\n" +
 	"\x0eSendPushMsgReq\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
-	"\x04desc\x18\x02 \x01(\tR\x04desc\"7\n" +
+	"\x04desc\x18\x02 \x01(\tR\x04desc\x12\x18\n" +
+	"\auserIDs\x18\x03 \x03(\tR\auserIDs\"7\n" +
 	"\x0fSendPushMsgResp\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x10\n" +
 	"\x03msg\x18\x02 \x01(\tR\x03msg2\xd0\x17\n" +
