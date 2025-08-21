@@ -250,3 +250,13 @@ func (x *DestructMsgsReq) Check() error {
 	}
 	return nil
 }
+
+func (x *SendPushMsgReq) Check() error {
+	if x.Title == "" {
+		return errors.New("title is empty")
+	}
+	if x.Desc == "" {
+		return errors.New("desc is empty")
+	}
+	return nil
+}
