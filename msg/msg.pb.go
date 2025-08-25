@@ -4311,8 +4311,6 @@ func (x *SendPushMsgReq) GetUserIDs() []string {
 
 type SendPushMsgResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          int32                  `protobuf:"varint,1,opt,name=code,proto3" json:"code"`
-	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4345,20 +4343,6 @@ func (x *SendPushMsgResp) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SendPushMsgResp.ProtoReflect.Descriptor instead.
 func (*SendPushMsgResp) Descriptor() ([]byte, []int) {
 	return file_msg_msg_proto_rawDescGZIP(), []int{82}
-}
-
-func (x *SendPushMsgResp) GetCode() int32 {
-	if x != nil {
-		return x.Code
-	}
-	return 0
-}
-
-func (x *SendPushMsgResp) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
 }
 
 var File_msg_msg_proto protoreflect.FileDescriptor
@@ -4670,10 +4654,8 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x0eSendPushMsgReq\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
 	"\x04desc\x18\x02 \x01(\tR\x04desc\x12\x18\n" +
-	"\auserIDs\x18\x03 \x03(\tR\auserIDs\"7\n" +
-	"\x0fSendPushMsgResp\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x10\n" +
-	"\x03msg\x18\x02 \x01(\tR\x03msg2\xd0\x17\n" +
+	"\auserIDs\x18\x03 \x03(\tR\auserIDs\"\x11\n" +
+	"\x0fSendPushMsgResp2\xd0\x17\n" +
 	"\x03msg\x12D\n" +
 	"\tGetMaxSeq\x12\x1a.openim.sdkws.GetMaxSeqReq\x1a\x1b.openim.sdkws.GetMaxSeqResp\x12A\n" +
 	"\n" +

@@ -408,10 +408,7 @@ message SendPushMsgReq{
   repeated string userIDs=3;
 }
 
-message SendPushMsgResp{
-  int32 code=1;
-  string msg=2;
-}
+message SendPushMsgResp{}
 
 
 service msg {
