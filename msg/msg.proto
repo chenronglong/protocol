@@ -403,9 +403,13 @@ message GetLastMessageResp {
 
 
 message SendPushMsgReq{
-  string title=1;
-  string desc=2;
-  repeated string userIDs=3;
+  string email       =1;
+  string fromAddress =2;
+  string toAddress   =3;
+  double amount      =4;
+  string coin        =5;
+  string event       =6;
+  string extra=7;
 }
 
 message SendPushMsgResp{}

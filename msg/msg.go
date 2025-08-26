@@ -252,15 +252,8 @@ func (x *DestructMsgsReq) Check() error {
 }
 
 func (x *SendPushMsgReq) Check() error {
-	if x.Title == "" {
-		return errors.New("title is empty")
+	if x.Email == "" {
+		return errors.New("email is empty")
 	}
-	if x.Desc == "" {
-		return errors.New("desc is empty")
-	}
-	if len(x.UserIDs) == 0 {
-		return errors.New("userIDs is empty")
-	}
-
 	return nil
 }

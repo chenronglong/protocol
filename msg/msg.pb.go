@@ -4251,9 +4251,13 @@ func (x *GetLastMessageResp) GetMsgs() map[string]*sdkws.MsgData {
 
 type SendPushMsgReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title"`
-	Desc          string                 `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc"`
-	UserIDs       []string               `protobuf:"bytes,3,rep,name=userIDs,proto3" json:"userIDs"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email"`
+	FromAddress   string                 `protobuf:"bytes,2,opt,name=fromAddress,proto3" json:"fromAddress"`
+	ToAddress     string                 `protobuf:"bytes,3,opt,name=toAddress,proto3" json:"toAddress"`
+	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount"`
+	Coin          string                 `protobuf:"bytes,5,opt,name=coin,proto3" json:"coin"`
+	Event         string                 `protobuf:"bytes,6,opt,name=event,proto3" json:"event"`
+	Extra         string                 `protobuf:"bytes,7,opt,name=extra,proto3" json:"extra"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4288,25 +4292,53 @@ func (*SendPushMsgReq) Descriptor() ([]byte, []int) {
 	return file_msg_msg_proto_rawDescGZIP(), []int{81}
 }
 
-func (x *SendPushMsgReq) GetTitle() string {
+func (x *SendPushMsgReq) GetEmail() string {
 	if x != nil {
-		return x.Title
+		return x.Email
 	}
 	return ""
 }
 
-func (x *SendPushMsgReq) GetDesc() string {
+func (x *SendPushMsgReq) GetFromAddress() string {
 	if x != nil {
-		return x.Desc
+		return x.FromAddress
 	}
 	return ""
 }
 
-func (x *SendPushMsgReq) GetUserIDs() []string {
+func (x *SendPushMsgReq) GetToAddress() string {
 	if x != nil {
-		return x.UserIDs
+		return x.ToAddress
 	}
-	return nil
+	return ""
+}
+
+func (x *SendPushMsgReq) GetAmount() float64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *SendPushMsgReq) GetCoin() string {
+	if x != nil {
+		return x.Coin
+	}
+	return ""
+}
+
+func (x *SendPushMsgReq) GetEvent() string {
+	if x != nil {
+		return x.Event
+	}
+	return ""
+}
+
+func (x *SendPushMsgReq) GetExtra() string {
+	if x != nil {
+		return x.Extra
+	}
+	return ""
 }
 
 type SendPushMsgResp struct {
@@ -4650,11 +4682,15 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x04msgs\x18\x01 \x03(\v2(.openim.msg.GetLastMessageResp.MsgsEntryR\x04msgs\x1aN\n" +
 	"\tMsgsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
-	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"T\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"\xbe\x01\n" +
 	"\x0eSendPushMsgReq\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
-	"\x04desc\x18\x02 \x01(\tR\x04desc\x12\x18\n" +
-	"\auserIDs\x18\x03 \x03(\tR\auserIDs\"\x11\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\x12 \n" +
+	"\vfromAddress\x18\x02 \x01(\tR\vfromAddress\x12\x1c\n" +
+	"\ttoAddress\x18\x03 \x01(\tR\ttoAddress\x12\x16\n" +
+	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x12\n" +
+	"\x04coin\x18\x05 \x01(\tR\x04coin\x12\x14\n" +
+	"\x05event\x18\x06 \x01(\tR\x05event\x12\x14\n" +
+	"\x05extra\x18\a \x01(\tR\x05extra\"\x11\n" +
 	"\x0fSendPushMsgResp2\xd0\x17\n" +
 	"\x03msg\x12D\n" +
 	"\tGetMaxSeq\x12\x1a.openim.sdkws.GetMaxSeqReq\x1a\x1b.openim.sdkws.GetMaxSeqResp\x12A\n" +
