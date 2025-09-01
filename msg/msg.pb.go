@@ -4258,6 +4258,7 @@ type SendPushMsgReq struct {
 	Coin          string                 `protobuf:"bytes,5,opt,name=coin,proto3" json:"coin"`
 	Event         string                 `protobuf:"bytes,6,opt,name=event,proto3" json:"event"`
 	Extra         string                 `protobuf:"bytes,7,opt,name=extra,proto3" json:"extra"`
+	ReceiveUid    string                 `protobuf:"bytes,8,opt,name=receiveUid,proto3" json:"receiveUid"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4337,6 +4338,13 @@ func (x *SendPushMsgReq) GetEvent() string {
 func (x *SendPushMsgReq) GetExtra() string {
 	if x != nil {
 		return x.Extra
+	}
+	return ""
+}
+
+func (x *SendPushMsgReq) GetReceiveUid() string {
+	if x != nil {
+		return x.ReceiveUid
 	}
 	return ""
 }
@@ -4682,7 +4690,7 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x04msgs\x18\x01 \x03(\v2(.openim.msg.GetLastMessageResp.MsgsEntryR\x04msgs\x1aN\n" +
 	"\tMsgsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
-	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"\xbe\x01\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"\xde\x01\n" +
 	"\x0eSendPushMsgReq\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12 \n" +
 	"\vfromAddress\x18\x02 \x01(\tR\vfromAddress\x12\x1c\n" +
@@ -4690,7 +4698,10 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x12\n" +
 	"\x04coin\x18\x05 \x01(\tR\x04coin\x12\x14\n" +
 	"\x05event\x18\x06 \x01(\tR\x05event\x12\x14\n" +
-	"\x05extra\x18\a \x01(\tR\x05extra\"\x11\n" +
+	"\x05extra\x18\a \x01(\tR\x05extra\x12\x1e\n" +
+	"\n" +
+	"receiveUid\x18\b \x01(\tR\n" +
+	"receiveUid\"\x11\n" +
 	"\x0fSendPushMsgResp2\xd0\x17\n" +
 	"\x03msg\x12D\n" +
 	"\tGetMaxSeq\x12\x1a.openim.sdkws.GetMaxSeqReq\x1a\x1b.openim.sdkws.GetMaxSeqResp\x12A\n" +

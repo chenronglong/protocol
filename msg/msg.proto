@@ -410,6 +410,7 @@ message SendPushMsgReq{
   string coin        =5;
   string event       =6;
   string extra=7;
+  string receiveUid=8;
 }
 
 message SendPushMsgResp{}
