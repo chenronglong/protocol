@@ -379,6 +379,15 @@ message clientConfig {
   string value = 3;
 }
 
+
+message GetUserOnlineStatusReq{
+  string userId = 1;
+}
+
+message GetUserOnlineStatusResp{
+  userOnlineStatus status = 1;
+}
+
 service user {
   //Get the specified user information full field
   rpc getDesignateUsers(getDesignateUsersReq) returns (getDesignateUsersResp);
@@ -439,5 +448,6 @@ service user {
   rpc delUserClientConfig(delUserClientConfigReq) returns (delUserClientConfigResp);
 
   rpc pageUserClientConfig(pageUserClientConfigReq) returns (pageUserClientConfigResp);
-
+  //获取用户在线状态
+  rpc getUserOnlineStatus(GetUserOnlineStatusReq) returns (GetUserOnlineStatusResp);
 }
