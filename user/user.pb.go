@@ -4020,7 +4020,7 @@ func (x *GetUserOnlineStatusReq) GetUserId() string {
 
 type GetUserOnlineStatusResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        *UserOnlineStatus      `protobuf:"bytes,1,opt,name=status,proto3" json:"status"`
+	Status        *OnlineStatus          `protobuf:"bytes,1,opt,name=status,proto3" json:"status"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4055,7 +4055,7 @@ func (*GetUserOnlineStatusResp) Descriptor() ([]byte, []int) {
 	return file_user_user_proto_rawDescGZIP(), []int{79}
 }
 
-func (x *GetUserOnlineStatusResp) GetStatus() *UserOnlineStatus {
+func (x *GetUserOnlineStatusResp) GetStatus() *OnlineStatus {
 	if x != nil {
 		return x.Status
 	}
@@ -4384,9 +4384,9 @@ const file_user_user_proto_rawDesc = "" +
 	"\x06userID\x18\x02 \x01(\tR\x06userID\x12\x14\n" +
 	"\x05value\x18\x03 \x01(\tR\x05value\"0\n" +
 	"\x16GetUserOnlineStatusReq\x12\x16\n" +
-	"\x06userId\x18\x01 \x01(\tR\x06userId\"P\n" +
-	"\x17GetUserOnlineStatusResp\x125\n" +
-	"\x06status\x18\x01 \x01(\v2\x1d.openim.user.userOnlineStatusR\x06status2\xf3\x17\n" +
+	"\x06userId\x18\x01 \x01(\tR\x06userId\"L\n" +
+	"\x17GetUserOnlineStatusResp\x121\n" +
+	"\x06status\x18\x01 \x01(\v2\x19.openim.user.onlineStatusR\x06status2\xf3\x17\n" +
 	"\x04user\x12Z\n" +
 	"\x11getDesignateUsers\x12!.openim.user.getDesignateUsersReq\x1a\".openim.user.getDesignateUsersResp\x12Q\n" +
 	"\x0eupdateUserInfo\x12\x1e.openim.user.updateUserInfoReq\x1a\x1f.openim.user.updateUserInfoResp\x12W\n" +
@@ -4560,7 +4560,7 @@ var file_user_user_proto_depIdxs = []int32{
 	84, // 31: openim.user.setUserClientConfigReq.configs:type_name -> openim.user.setUserClientConfigReq.ConfigsEntry
 	85, // 32: openim.user.pageUserClientConfigReq.pagination:type_name -> openim.sdkws.RequestPagination
 	77, // 33: openim.user.pageUserClientConfigResp.configs:type_name -> openim.user.clientConfig
-	41, // 34: openim.user.GetUserOnlineStatusResp.status:type_name -> openim.user.userOnlineStatus
+	36, // 34: openim.user.GetUserOnlineStatusResp.status:type_name -> openim.user.onlineStatus
 	4,  // 35: openim.user.user.getDesignateUsers:input_type -> openim.user.getDesignateUsersReq
 	6,  // 36: openim.user.user.updateUserInfo:input_type -> openim.user.updateUserInfoReq
 	8,  // 37: openim.user.user.updateUserInfoEx:input_type -> openim.user.updateUserInfoExReq
