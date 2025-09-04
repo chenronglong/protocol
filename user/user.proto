@@ -385,7 +385,7 @@ message GetUserOnlineStatusReq{
 }
 
 message GetUserOnlineStatusResp{
-  userOnlineStatus status = 1;
+  onlineStatus status = 1;
 }
 
 service user {
