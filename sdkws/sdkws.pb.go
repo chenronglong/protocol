@@ -581,6 +581,7 @@ type UserInfo struct {
 	AppMangerLevel    int32                  `protobuf:"varint,6,opt,name=appMangerLevel,proto3" json:"appMangerLevel"`
 	GlobalRecvMsgOpt  int32                  `protobuf:"varint,7,opt,name=globalRecvMsgOpt,proto3" json:"globalRecvMsgOpt"`
 	AllowDirectToChat int32                  `protobuf:"varint,8,opt,name=allowDirectToChat,proto3" json:"allowDirectToChat"`
+	EmailMask         int32                  `protobuf:"varint,9,opt,name=emailMask,proto3" json:"emailMask"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -667,6 +668,13 @@ func (x *UserInfo) GetGlobalRecvMsgOpt() int32 {
 func (x *UserInfo) GetAllowDirectToChat() int32 {
 	if x != nil {
 		return x.AllowDirectToChat
+	}
+	return 0
+}
+
+func (x *UserInfo) GetEmailMask() int32 {
+	if x != nil {
+		return x.EmailMask
 	}
 	return 0
 }
@@ -5632,7 +5640,7 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
 	"\afaceURL\x18\x03 \x01(\tR\afaceURL\x12\x0e\n" +
-	"\x02ex\x18\x04 \x01(\tR\x02ex\"\x8a\x02\n" +
+	"\x02ex\x18\x04 \x01(\tR\x02ex\"\xa8\x02\n" +
 	"\bUserInfo\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x12\x1a\n" +
 	"\bnickname\x18\x02 \x01(\tR\bnickname\x12\x18\n" +
@@ -5643,7 +5651,8 @@ const file_sdkws_sdkws_proto_rawDesc = "" +
 	"createTime\x12&\n" +
 	"\x0eappMangerLevel\x18\x06 \x01(\x05R\x0eappMangerLevel\x12*\n" +
 	"\x10globalRecvMsgOpt\x18\a \x01(\x05R\x10globalRecvMsgOpt\x12,\n" +
-	"\x11allowDirectToChat\x18\b \x01(\x05R\x11allowDirectToChat\"\x91\x02\n" +
+	"\x11allowDirectToChat\x18\b \x01(\x05R\x11allowDirectToChat\x12\x1c\n" +
+	"\temailMask\x18\t \x01(\x05R\temailMask\"\x91\x02\n" +
 	"\x0eUserInfoWithEx\x12\x16\n" +
 	"\x06userID\x18\x01 \x01(\tR\x06userID\x128\n" +
 	"\bnickname\x18\x02 \x01(\v2\x1c.openim.protobuf.StringValueR\bnickname\x126\n" +
