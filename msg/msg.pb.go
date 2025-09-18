@@ -4257,8 +4257,10 @@ type SendPushMsgReq struct {
 	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount"`
 	Coin          string                 `protobuf:"bytes,5,opt,name=coin,proto3" json:"coin"`
 	Event         string                 `protobuf:"bytes,6,opt,name=event,proto3" json:"event"`
-	Extra         string                 `protobuf:"bytes,7,opt,name=extra,proto3" json:"extra"`
-	ReceiveUid    string                 `protobuf:"bytes,8,opt,name=receiveUid,proto3" json:"receiveUid"`
+	Status        string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status"`
+	Preposition   string                 `protobuf:"bytes,8,opt,name=preposition,proto3" json:"preposition"`
+	Extra         string                 `protobuf:"bytes,9,opt,name=extra,proto3" json:"extra"`
+	ReceiveUid    string                 `protobuf:"bytes,10,opt,name=receiveUid,proto3" json:"receiveUid"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4331,6 +4333,20 @@ func (x *SendPushMsgReq) GetCoin() string {
 func (x *SendPushMsgReq) GetEvent() string {
 	if x != nil {
 		return x.Event
+	}
+	return ""
+}
+
+func (x *SendPushMsgReq) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *SendPushMsgReq) GetPreposition() string {
+	if x != nil {
+		return x.Preposition
 	}
 	return ""
 }
@@ -4690,17 +4706,20 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x04msgs\x18\x01 \x03(\v2(.openim.msg.GetLastMessageResp.MsgsEntryR\x04msgs\x1aN\n" +
 	"\tMsgsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
-	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"\xde\x01\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"\x98\x02\n" +
 	"\x0eSendPushMsgReq\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12 \n" +
 	"\vfromAddress\x18\x02 \x01(\tR\vfromAddress\x12\x1c\n" +
 	"\ttoAddress\x18\x03 \x01(\tR\ttoAddress\x12\x16\n" +
 	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x12\n" +
 	"\x04coin\x18\x05 \x01(\tR\x04coin\x12\x14\n" +
-	"\x05event\x18\x06 \x01(\tR\x05event\x12\x14\n" +
-	"\x05extra\x18\a \x01(\tR\x05extra\x12\x1e\n" +
+	"\x05event\x18\x06 \x01(\tR\x05event\x12\x16\n" +
+	"\x06status\x18\a \x01(\tR\x06status\x12 \n" +
+	"\vpreposition\x18\b \x01(\tR\vpreposition\x12\x14\n" +
+	"\x05extra\x18\t \x01(\tR\x05extra\x12\x1e\n" +
 	"\n" +
-	"receiveUid\x18\b \x01(\tR\n" +
+	"receiveUid\x18\n" +
+	" \x01(\tR\n" +
 	"receiveUid\"\x11\n" +
 	"\x0fSendPushMsgResp2\xd0\x17\n" +
 	"\x03msg\x12D\n" +
