@@ -4251,16 +4251,9 @@ func (x *GetLastMessageResp) GetMsgs() map[string]*sdkws.MsgData {
 
 type SendPushMsgReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email"`
-	FromAddress   string                 `protobuf:"bytes,2,opt,name=fromAddress,proto3" json:"fromAddress"`
-	ToAddress     string                 `protobuf:"bytes,3,opt,name=toAddress,proto3" json:"toAddress"`
-	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount"`
-	Coin          string                 `protobuf:"bytes,5,opt,name=coin,proto3" json:"coin"`
-	Event         string                 `protobuf:"bytes,6,opt,name=event,proto3" json:"event"`
-	Status        string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status"`
-	Preposition   string                 `protobuf:"bytes,8,opt,name=preposition,proto3" json:"preposition"`
-	Extra         string                 `protobuf:"bytes,9,opt,name=extra,proto3" json:"extra"`
-	ReceiveUid    string                 `protobuf:"bytes,10,opt,name=receiveUid,proto3" json:"receiveUid"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title"`
+	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content"`
+	ReceiveUids   []string               `protobuf:"bytes,3,rep,name=receiveUids,proto3" json:"receiveUids"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4295,74 +4288,25 @@ func (*SendPushMsgReq) Descriptor() ([]byte, []int) {
 	return file_msg_msg_proto_rawDescGZIP(), []int{81}
 }
 
-func (x *SendPushMsgReq) GetEmail() string {
+func (x *SendPushMsgReq) GetTitle() string {
 	if x != nil {
-		return x.Email
+		return x.Title
 	}
 	return ""
 }
 
-func (x *SendPushMsgReq) GetFromAddress() string {
+func (x *SendPushMsgReq) GetContent() string {
 	if x != nil {
-		return x.FromAddress
+		return x.Content
 	}
 	return ""
 }
 
-func (x *SendPushMsgReq) GetToAddress() string {
+func (x *SendPushMsgReq) GetReceiveUids() []string {
 	if x != nil {
-		return x.ToAddress
+		return x.ReceiveUids
 	}
-	return ""
-}
-
-func (x *SendPushMsgReq) GetAmount() float64 {
-	if x != nil {
-		return x.Amount
-	}
-	return 0
-}
-
-func (x *SendPushMsgReq) GetCoin() string {
-	if x != nil {
-		return x.Coin
-	}
-	return ""
-}
-
-func (x *SendPushMsgReq) GetEvent() string {
-	if x != nil {
-		return x.Event
-	}
-	return ""
-}
-
-func (x *SendPushMsgReq) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-func (x *SendPushMsgReq) GetPreposition() string {
-	if x != nil {
-		return x.Preposition
-	}
-	return ""
-}
-
-func (x *SendPushMsgReq) GetExtra() string {
-	if x != nil {
-		return x.Extra
-	}
-	return ""
-}
-
-func (x *SendPushMsgReq) GetReceiveUid() string {
-	if x != nil {
-		return x.ReceiveUid
-	}
-	return ""
+	return nil
 }
 
 type SendPushMsgResp struct {
@@ -4706,21 +4650,11 @@ const file_msg_msg_proto_rawDesc = "" +
 	"\x04msgs\x18\x01 \x03(\v2(.openim.msg.GetLastMessageResp.MsgsEntryR\x04msgs\x1aN\n" +
 	"\tMsgsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
-	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"\x98\x02\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.openim.sdkws.MsgDataR\x05value:\x028\x01\"b\n" +
 	"\x0eSendPushMsgReq\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\x12 \n" +
-	"\vfromAddress\x18\x02 \x01(\tR\vfromAddress\x12\x1c\n" +
-	"\ttoAddress\x18\x03 \x01(\tR\ttoAddress\x12\x16\n" +
-	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x12\n" +
-	"\x04coin\x18\x05 \x01(\tR\x04coin\x12\x14\n" +
-	"\x05event\x18\x06 \x01(\tR\x05event\x12\x16\n" +
-	"\x06status\x18\a \x01(\tR\x06status\x12 \n" +
-	"\vpreposition\x18\b \x01(\tR\vpreposition\x12\x14\n" +
-	"\x05extra\x18\t \x01(\tR\x05extra\x12\x1e\n" +
-	"\n" +
-	"receiveUid\x18\n" +
-	" \x01(\tR\n" +
-	"receiveUid\"\x11\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
+	"\acontent\x18\x02 \x01(\tR\acontent\x12 \n" +
+	"\vreceiveUids\x18\x03 \x03(\tR\vreceiveUids\"\x11\n" +
 	"\x0fSendPushMsgResp2\xd0\x17\n" +
 	"\x03msg\x12D\n" +
 	"\tGetMaxSeq\x12\x1a.openim.sdkws.GetMaxSeqReq\x1a\x1b.openim.sdkws.GetMaxSeqResp\x12A\n" +

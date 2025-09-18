@@ -252,8 +252,8 @@ func (x *DestructMsgsReq) Check() error {
 }
 
 func (x *SendPushMsgReq) Check() error {
-	if x.ReceiveUid == "" {
-		return errors.New("receiveUid is empty")
+	if len(x.ReceiveUids) == 0 {
+		return errors.New("receiveUids is empty")
 	}
 	return nil
 }

@@ -401,18 +401,10 @@ message GetLastMessageResp {
   map<string,sdkws.MsgData> msgs = 1;
 }
 
-
 message SendPushMsgReq{
-  string email       =1;
-  string fromAddress =2;
-  string toAddress   =3;
-  double amount      =4;
-  string coin        =5;
-  string event       =6;
-  string status=7;
-  string preposition=8;
-  string extra=9;
-  string receiveUid=10;
+  string title   =1;
+  string content =2;
+  repeated string receiveUids =3;
 }
 
 message SendPushMsgResp{}
