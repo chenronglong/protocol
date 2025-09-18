@@ -86,6 +86,7 @@ message UserInfo {
   int32 globalRecvMsgOpt = 7;
   int32 allowDirectToChat = 8;
   int32 emailMask = 9;
+  string lang = 10;
 }
 
 message UserInfoWithEx {
